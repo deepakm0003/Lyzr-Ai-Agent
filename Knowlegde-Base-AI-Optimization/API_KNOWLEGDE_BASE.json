@@ -1,0 +1,14 @@
+{
+  "id": "686dcf18c237d46984bce90a",
+  "user_id": "sk-default-XjjoORvMET9Xe6f1qAMATS1DrvhQ4Htq",
+  "llm_credential_id": "lyzr_openai",
+  "embedding_credential_id": "lyzr_openai",
+  "vector_db_credential_id": "lyzr_qdrant",
+  "description": "An expert AI advisor that helps enterprise teams reduce and optimize their GenAI costs by recommending the most cost-efficient AI models and configurations and reduce the cost of AI adoption by selecting the right tools, models. ",
+  "collection_name": "aiadvisoragentkb3bt8",
+  "llm_model": "gpt-4o-mini",
+  "embedding_model": "text-embedding-3-large",
+  "vector_store_provider": "Qdrant [Lyzr]",
+  "semantic_data_model": false,
+  "meta_data": {}
+}

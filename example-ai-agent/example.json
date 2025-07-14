@@ -1,0 +1,45 @@
+{
+  "name": "ai_cost_optimization_plan",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "business_use_case": {
+        "type": "string",
+        "description": "The primary business application or task under consideration (e.g., AI email summarization, customer onboarding)"
+      },
+      "optimal_llm_choice": {
+        "type": "string",
+        "description": "Suggested language model best suited for the use case"
+      },
+      "monthly_estimated_expense_usd": {
+        "type": "number",
+        "description": "Predicted monthly cost for deploying the selected model, in US dollars"
+      },
+      "expected_roi_percentage": {
+        "type": "number",
+        "description": "Anticipated return on investment (ROI) expressed as a percentage, based on automation benefits"
+      },
+      "tasks_suitable_for_automation": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "A list of specific workflows or actions that can be automated to reduce effort and cost"
+      },
+      "strategy_summary": {
+        "type": "string",
+        "description": "Brief, actionable insights summarizing why this model was selected and how to reduce expenses"
+      }
+    },
+    "required": [
+      "business_use_case",
+      "optimal_llm_choice",
+      "monthly_estimated_expense_usd",
+      "expected_roi_percentage",
+      "tasks_suitable_for_automation",
+      "strategy_summary"
+    ],
+    "additionalProperties": false
+  }
+}

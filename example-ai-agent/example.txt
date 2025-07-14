@@ -1,0 +1,214 @@
+
+User Input:
+“We want to implement AI for handling customer support emails. What should we use?”
+
+Agent Response:
+
+Analyzing use case: Automated email response
+
+LLM Comparison:
+- GPT-4o-mini: $0.50 / 1M tokens — balanced latency and quality  
+- Claude 3 Sonnet: $3.00 / 1M tokens — high comprehension, costly  
+- Amazon Nova: $0.25 / 1M tokens — low cost, good for standard replies  
+
+Recommendation: Use Amazon Nova for template-based replies. Use Claude for escalated queries only. This reduces cost by ~70% with hybrid routing.
+
+Tip: Fine-tune prompt reuse, batch queries for cost-efficiency.
+
+------------------------------------------------------------
+
+User Input:
+“Which LLM is best for real-time document summarization in our internal system?”
+
+Agent Response:
+
+Use case: Real-time internal summarization
+
+LLM Comparison:
+- GPT-4o-mini: Low latency, accurate summaries, ~$0.50 / 1M tokens  
+- Claude 3 Sonnet: Higher cost, deeper understanding, ~$3.00 / 1M tokens  
+- Amazon Nova: Extremely fast and cheapest, ~$0.25 / 1M tokens  
+
+Suggestion: Use Amazon Nova for speed and budget-friendly ops. Use GPT-4o-mini for better summarization of large or diverse text.
+
+Optimization Strategy: Schedule summarization during off-peak hours & use shared context memory to reduce token usage.
+
+------------------------------------------------------------
+
+User Input:
+“We’re building a chatbot for onboarding new users to our platform. What do you suggest?”
+
+Agent Response:
+
+Intent: Onboarding Chatbot
+
+LLM Options:
+- GPT-4o-mini: Conversational, low cost, ~90ms latency  
+- Claude 3 Sonnet: Very helpful in ambiguous scenarios but more expensive  
+- Mistral (via Bedrock): Good general-purpose performance at ~$0.35 / 1M tokens  
+
+Best Pick: GPT-4o-mini or Mistral for scalable, cost-efficient onboarding.
+
+Optimize By:
+- Reusing similar prompts  
+- Caching frequent outputs  
+- Disabling verbose system messages
+
+------------------------------------------------------------
+
+User Input:
+“We want a low-latency model for fast input classification.”
+
+Agent Response:
+
+Use case: Input Classification
+
+Model Comparison:
+- Amazon Nova: Ultra-low latency, cheap (~$0.25 / 1M tokens)  
+- Mistral: Good balance of speed and intelligence  
+- Claude 3 Sonnet: High-quality but slower and costly  
+
+Choose Amazon Nova for max speed. If more accuracy is required, hybrid with Mistral.
+
+Cost Tips: Preprocess inputs to avoid unnecessary tokenization. Trim whitespace, clean headers.
+
+------------------------------------------------------------
+
+User Input:
+“What’s the cheapest model for basic text generation?”
+
+Agent Response:
+
+Use case: Basic Text Generation
+
+Pricing Overview:
+- Amazon Nova: $0.25 / 1M tokens  
+- Mistral: $0.35 / 1M tokens  
+- GPT-4o-mini: $0.50 / 1M tokens  
+
+Winner: Amazon Nova for cost-sensitive use cases
+
+Optimization Tips:
+- Use temperature=0.7, max tokens=250  
+- Batch text generation in API calls  
+- Reuse response templates where possible
+
+------------------------------------------------------------
+
+User Input:
+“Which LLM is better if I care about balanced performance and pricing?”
+
+Agent Response:
+
+Criteria: Balanced performance & pricing
+
+Options:
+- GPT-4o-mini: Great balance for $0.50 / 1M tokens  
+- Mistral (via Bedrock): Lower cost, slightly less accuracy — $0.35 / 1M  
+- Claude 3 Sonnet: High quality, $3.00 / 1M tokens  
+
+Recommendation: Start with GPT-4o-mini for general use. Test Mistral for static queries. Reserve Claude only for critical business logic.
+
+Pro Tip: Evaluate usage via monthly inference logs & run a cost audit every 2 weeks.
+
+------------------------------------------------------------
+
+User Input:
+We want to summarize 2,000 reports monthly, each around 800 tokens. Estimate cost across models.
+
+Agent Response:
+
+{
+  "use_case": "Report Summarization",
+  "monthly_documents": 2000,
+  "tokens_per_document": 800,
+  "total_tokens": 1600000,
+  "model_costs": {
+    "Amazon Nova": {
+      "cost_per_1M_tokens": 0.25,
+      "estimated_cost": 0.25 * 1.6
+    },
+    "GPT-4o-mini": {
+      "cost_per_1M_tokens": 0.50,
+      "estimated_cost": 0.50 * 1.6
+    },
+    "Claude 3 Sonnet": {
+      "cost_per_1M_tokens": 3.00,
+      "estimated_cost": 3.00 * 1.6
+    }
+  },
+  "recommendation": "Amazon Nova for low cost. GPT-4o-mini if summaries need more nuance."
+}
+
+Summary:
+- Nova: $0.40
+- GPT-4o-mini: $0.80
+- Claude: $4.80
+Use Nova unless quality needs justify cost jump.
+
+------------------------------------------------------------
+
+User Input:
+We currently spend $1,200 on Claude. Can we reduce it by switching to GPT-4o-mini or Nova?
+
+Agent Response:
+
+{
+  "current_model": "Claude 3 Sonnet",
+  "monthly_tokens": 400000,
+  "current_cost": 1200,
+  "alternative_models": {
+    "GPT-4o-mini": {
+      "cost_per_1M_tokens": 0.50,
+      "estimated_cost": (400000 / 1000000) * 0.50,
+      "savings": 1200 - ((400000 / 1000000) * 0.50)
+    },
+    "Amazon Nova": {
+      "cost_per_1M_tokens": 0.25,
+      "estimated_cost": (400000 / 1000000) * 0.25,
+      "savings": 1200 - ((400000 / 1000000) * 0.25)
+    }
+  },
+  "recommendation": "Switch to Nova for max ROI unless high semantic accuracy needed."
+}
+
+Summary:
+- Claude: $1200
+- GPT-4o-mini: $0.20 → Save $1199.80
+- Nova: $0.10 → Save $1199.90
+Use Nova unless accuracy demands GPT.
+
+------------------------------------------------------------
+
+User Input:
+We need to run 10,000 onboarding conversations per month, each using 300 tokens. Estimate total cost.
+
+Agent Response:
+
+{
+  "use_case": "User Onboarding via Chatbot",
+  "monthly_conversations": 10000,
+  "tokens_per_conversation": 300,
+  "total_tokens": 3000000,
+  "model_costs": {
+    "GPT-4o-mini": {
+      "cost_per_1M": 0.50,
+      "monthly_cost": 0.50 * 3
+    },
+    "Amazon Nova": {
+      "cost_per_1M": 0.25,
+      "monthly_cost": 0.25 * 3
+    },
+    "Claude 3 Sonnet": {
+      "cost_per_1M": 3.00,
+      "monthly_cost": 3.00 * 3
+    }
+  },
+  "recommended_model": "Amazon Nova for cost efficiency. GPT-4o-mini if onboarding requires adaptive answers."
+}
+
+Summary:
+- Nova: $0.75
+- GPT-4o-mini: $1.50
+- Claude: $9.00
+Pick Nova unless interaction is complex.

@@ -1,0 +1,87 @@
+Metrics & Formulas
+1. Break-Even Point
+Break–Even Queries = Fixed Monthly Cost ÷ (Manual Cost per Task – AI Cost per Task)
+
+2. Prompt Compression Efficiency
+Compression Gain (%) = ((Original Tokens – Compressed Tokens) ÷ Original Tokens) × 100
+
+3. System Message Reduction Efficiency
+Efficiency Gain = (Verbose Tokens – Minimized Tokens) ÷ Verbose Tokens × 100
+
+4. Batching Efficiency
+Cost per Task (Batched) = Total Cost of Batch ÷ Number of Tasks in Batch
+
+5. Stop Sequence Optimization
+Avg Saved Tokens = Avg Output Tokens – Avg Output Tokens with Stop Sequence
+
+6. Decision Accuracy (%)
+Accuracy = (Correct Decisions ÷ Total Decisions) × 100
+
+7. Context Adherence Score
+Context Score = Relevant Tokens Used ÷ Total Context Tokens
+
+8. Instruction Compliance Rate
+Compliance (%) = Compliant Responses ÷ Total Responses × 100
+
+9. Knowledge Base Hit Rate
+KB Hit Rate = (KB Queries with Valid Results ÷ Total KB Queries) × 100
+
+10. Response Latency
+Latency = Model Inference Time + Network Time + Pre/Post Processing
+
+11. Throughput (tasks/sec)
+Throughput = Total Tasks ÷ Total Time (sec)
+
+12. Token Throughput
+Token Throughput = (Input + Output Tokens) ÷ Total Time (sec)
+
+13. Embedding Cost
+Cost = (Tokens ÷ 1000) × Embedding Token Rate
+
+14. RAG Recall Efficiency (%)
+Recall Rate = Relevant Documents Retrieved ÷ Total Retrieved × 100
+
+15. Vector DB Savings
+Savings = ((Full Input Cost – Pre-filtered Input Cost) ÷ Full Input Cost) × 100
+
+Groundedness Facts & Insights
+Context-aware compression techniques like RAG reduce token redundancy by 40–60%.
+
+Gemini 1.5 Flash offers low–latency performance ideal for real–time task execution under 200ms.
+
+Inference cost optimization includes load–balancing between small and large models based on complexity.
+
+LLM response latency is generally proportional to output token length.
+
+Cost per response can be reduced by truncating long completion outputs using stop sequences.
+
+For high concurrency environments, smaller models reduce latency bottlenecks in synchronous workflows.
+
+Using embeddings for pre-filtering data reduces full-model invocation frequency and total compute cost.
+
+Cost & ROI Metrics
+Token Cost Formula (Standard)
+Total Cost = ((Input Tokens ÷ 1000) × Input Rate) + ((Output Tokens ÷ 1000) × Output Rate)
+
+Monthly Cost Estimation
+Monthly Cost = Average Tokens per Query × Queries per Month ÷ 1000 × Token Rate
+
+ROI Calculation
+ROI (%) = ((Manual Cost – AI Cost) ÷ AI Cost) × 100
+
+Model-Specific Information & Use Cases
+Legal Use Case: In legal, LLMs help in summarizing contracts, identifying clauses, and drafting NDAs.
+
+Claude 3.5 Haiku: $0.0008 per 1,000 input tokens, $0.0025 per 1,000 output tokens
+
+GPT-3.5 Turbo: $0.0015 per 1,000 input tokens, $0.002 per 1,000 output tokens
+
+Nova Micro: Low-cost model for simple tasks like classification and summarization
+
+Claude 3.5 Sonnet: Balanced quality and cost for summarization and task analysis
+
+Use GPT-4, Claude Opus, or Gemini 1.5 Pro only for high-context understanding or complex reasoning
+
+Automating a 15–30 hour/month task at ₹400/hour can save ₹6,000–₹12,000 monthly depending on the AI model used
+
+Use smaller models like Claude Haiku or Gemini Flash for testing and prototyping to save cost
